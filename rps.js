@@ -1,3 +1,4 @@
+
 function getComputerChoice(){
     computer = Math.floor(Math.random() * 3);
     if(computer === 0){
@@ -14,26 +15,28 @@ function getComputerChoice(){
 // console.log(getComputerChoice());
 
 function playRound(playerSelection, computerSelection){
+    playerSelectionLower = playerSelection.toLowerCase()
+    computerSelectionLower = computerSelection.toLowerCase()
 
-    if(playerSelection === "Rock" && computerSelection === "Rock"){
+    if(playerSelectionLower === "rock" && computerSelectionLower === "rock"){
         return `You chose ${playerSelection} and the computer chose ${computerSelection}, you tied!`
-    } else if (playerSelection === "Rock" && computerSelection === "Paper"){
+    } else if (playerSelectionLower === "rock" && computerSelectionLower === "paper"){
         return `You chose ${playerSelection} and the computer chose ${computerSelection}, you suck!`
-    } else if (playerSelection === "Rock" && computerSelection === "Scizzors"){
+    } else if (playerSelectionLower === "rock" && computerSelectionLower === "scizzors"){
         return `You chose ${playerSelection} and the computer chose ${computerSelection}, you win!`
         // Rock ^
-    } else if (playerSelection === "Paper" && computerSelection === "Rock"){
+    } else if (playerSelectionLower === "paper" && computerSelectionLower === "rock"){
         return `You chose ${playerSelection} and the computer chose ${computerSelection}, you win!`
-    } else if (playerSelection === "Paper" && computerSelection === "Scizzors"){
+    } else if (playerSelectionLower === "paper" && computerSelectionLower === "scizzors"){
         return `You chose ${playerSelection} and the computer chose ${computerSelection}, you suck!`
-    } else if (playerSelection === "Paper" && computerSelection === "Paper"){
+    } else if (playerSelectionLower === "paper" && computerSelectionLower === "paper"){
         return `You chose ${playerSelection} and the computer chose ${computerSelection}, you tied!`
         // Paper ^
-    } else if (playerSelection === "Scizzors" && computerSelection === "Rock"){
+    } else if (playerSelectionLower === "scizzors" && computerSelectionLower === "rock"){
         return `You chose ${playerSelection} and the computer chose ${computerSelection}, you suck!`
-    } else if (playerSelection === "Scizzors" && computerSelection === "Paper"){
+    } else if (playerSelectionLower === "scizzors" && computerSelectionLower === "paper"){
         return `You chose ${playerSelection} and the computer chose ${computerSelection}, you win!`
-    } else if (playerSelection === "Scizzors" && computerSelection === "Scizzors"){
+    } else if (playerSelectionLower === "scizzors" && computerSelectionLower === "scizzors"){
         return `You chose ${playerSelection} and the computer chose ${computerSelection}, you tied!`
         // Scizzors ^
     } else {   
@@ -45,6 +48,6 @@ function playRound(playerSelection, computerSelection){
 
 // console.log(getComputerChoice());
 
-const playerSelection = "Rock";
+var playerSelection = "ScizzorS";
 const computerSelection = getComputerChoice();
 console.log(playRound(playerSelection, computerSelection));
