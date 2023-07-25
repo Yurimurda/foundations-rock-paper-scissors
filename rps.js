@@ -2,11 +2,11 @@
 function getComputerChoice(){
     computer = Math.floor(Math.random() * 3);
     if(computer === 0){
-        return "Rock"
+        return "rock"
     } else if (computer === 1){
-        return "Paper"
+        return "paper"
     } else if (computer === 2){
-        return "Scizzors"
+        return "scissors"
     } else {
         return "error!"
     }
@@ -15,32 +15,32 @@ function getComputerChoice(){
 // console.log(getComputerChoice());
 
 function playRound(playerSelection, computerSelection){
-    playerSelectionLower = playerSelection.toLowerCase()
-    computerSelectionLower = computerSelection.toLowerCase()
+    const playerSelectionLower = playerSelection.toLowerCase()
+    // const computerSelectionLower = computerSelection.toLowerCase()
 
-    if(playerSelectionLower === "rock" && computerSelectionLower === "rock"){
+    if(playerSelectionLower === "rock" && computerSelection === "rock"){
         return `You chose ${playerSelection} and the computer chose ${computerSelection}, you tied!`
-    } else if (playerSelectionLower === "rock" && computerSelectionLower === "paper"){
+    } else if (playerSelectionLower === "rock" && computerSelection === "paper"){
         return `You chose ${playerSelection} and the computer chose ${computerSelection}, you suck!`
-    } else if (playerSelectionLower === "rock" && computerSelectionLower === "scizzors"){
+    } else if (playerSelectionLower === "rock" && computerSelection === "scissors"){
         return `You chose ${playerSelection} and the computer chose ${computerSelection}, you win!`
         // Rock ^
-    } else if (playerSelectionLower === "paper" && computerSelectionLower === "rock"){
+    } else if (playerSelectionLower === "paper" && computerSelection === "rock"){
         return `You chose ${playerSelection} and the computer chose ${computerSelection}, you win!`
-    } else if (playerSelectionLower === "paper" && computerSelectionLower === "scizzors"){
+    } else if (playerSelectionLower === "paper" && computerSelection === "scissors"){
         return `You chose ${playerSelection} and the computer chose ${computerSelection}, you suck!`
-    } else if (playerSelectionLower === "paper" && computerSelectionLower === "paper"){
+    } else if (playerSelectionLower === "paper" && computerSelection === "paper"){
         return `You chose ${playerSelection} and the computer chose ${computerSelection}, you tied!`
         // Paper ^
-    } else if (playerSelectionLower === "scizzors" && computerSelectionLower === "rock"){
+    } else if (playerSelectionLower === "scissors" && computerSelection === "rock"){
         return `You chose ${playerSelection} and the computer chose ${computerSelection}, you suck!`
-    } else if (playerSelectionLower === "scizzors" && computerSelectionLower === "paper"){
+    } else if (playerSelectionLower === "scissors" && computerSelection === "paper"){
         return `You chose ${playerSelection} and the computer chose ${computerSelection}, you win!`
-    } else if (playerSelectionLower === "scizzors" && computerSelectionLower === "scizzors"){
+    } else if (playerSelectionLower === "scissors" && computerSelection === "scissors"){
         return `You chose ${playerSelection} and the computer chose ${computerSelection}, you tied!`
-        // Scizzors ^
+        // Scissors ^
     } else {   
-        return 'error!'
+        return `error! Bad input, ${playerSelection} is not valid. ${computerSelection} is computer's choice.`
     }
        
 
@@ -48,6 +48,14 @@ function playRound(playerSelection, computerSelection){
 
 // console.log(getComputerChoice());
 
-var playerSelection = "ScizzorS";
-const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
+// var playerSelection = "rOCK";
+// console.log(playRound(playerSelection, computerSelection));
+
+function testResults (form) {
+    const computerSelection = getComputerChoice();
+    var inputValue = form.inputbox.value;
+    var playerSelection = inputValue;
+    alert (playRound(playerSelection, computerSelection));
+}
+
+document.getElementById("rps")
